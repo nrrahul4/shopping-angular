@@ -1,0 +1,35 @@
+.square-outer {
+  cursor: pointer;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  align-items: center;
+  background-color: darkgreen;
+  justify-content: center;
+  border-radius: 9px;
+  @media screen and (max-width: 772px) {
+    height: 48px;
+    width: 50px;
+  }
+}
+
+.square {
+  width: 26px;
+  height: 30px;
+  border: none;
+  display: flex;
+  flex-flow: wrap;
+  border-radius: 9px;
+  &__small {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    margin: 1.3px;
+  }
+  &__large {
+    width: 14px;
+    height: 6px;
+    background-color: white;
+    margin: 1.3px;
+  }
+}

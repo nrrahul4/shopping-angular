@@ -1,0 +1,33 @@
+.recipe-card {
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  background-color: #708b16;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+}
+
+.container-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid-wrap {
+  border: 1px solid #d4d4d4;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 2px 5px #d4d4d4;
+  > div > img {
+    height: 400px;
+    width: 290px;
+  }
+}
+
+.recipe-detail-wrap {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+}

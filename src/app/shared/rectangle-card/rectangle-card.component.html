@@ -1,0 +1,21 @@
+<div *ngIf="!gridView">
+  <div *ngFor="let item of recipes">
+    <p class="recipe-card">{{ item.title }}</p>
+  </div>
+</div>
+<div *ngIf="gridView">
+  <div class="container container-wrap">
+    <div *ngFor="let item of recipes">
+      <div>
+        <div class="grid-wrap">
+          <div>
+            <img src="{{ item.image }}" alt="image" />
+          </div>
+          <div class="recipe-detail-wrap">
+            <p>{{ item.title }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

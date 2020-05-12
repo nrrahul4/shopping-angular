@@ -1,0 +1,62 @@
+<div class="modal" id="exampleModalCenter">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal-custom-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add new recipe</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="recipe title"
+          class="form-control input-section"
+          (input)="inputChange($event)"
+        />
+        <input
+          type="text"
+          id="source"
+          name="source"
+          placeholder="recipe source"
+          class="form-control input-section"
+          (input)="inputChange($event)"
+        />
+        <input
+          type="text"
+          id="image"
+          name="image"
+          placeholder="recipe picture"
+          class="form-control input-section"
+          (input)="inputChange($event)"
+        />
+        <input
+          type="text"
+          id="ingredients"
+          name="ingredients"
+          placeholder="enter ingredients, separated by a comma"
+          class="form-control input-section"
+          (input)="inputChange($event)"
+        />
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary custom-button"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="addRecipe()"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

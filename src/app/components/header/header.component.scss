@@ -1,0 +1,47 @@
+.header-main {
+  background-color: #93b81b;
+  height: 150px;
+  @media screen and (max-width: 772px) {
+    height: 90px;
+  }
+  &__subsection {
+    margin: auto 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 772px) {
+      margin: auto 15px;
+    }
+    & > div > h1 {
+      color: #ffffff;
+      @media screen and (max-width: 772px) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.recipe-head {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  justify-content: space-between;
+  @media screen and (max-width: 772px) {
+    width: 180px;
+  }
+  &__button {
+    height: 50px;
+    width: 140px;
+    border-radius: 10px;
+    background-color: #708b16;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    @media screen and (max-width: 772px) {
+      height: 35px;
+      width: 110px;
+    }
+  }
+}

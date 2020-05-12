@@ -1,9 +1,6 @@
 .header-main {
   background-color: #93b81b;
   height: 150px;
-  @media screen and (max-width: 772px) {
-    height: 90px;
-  }
   &__subsection {
     margin: auto 50px;
     height: 100%;
@@ -19,6 +16,9 @@
     @media screen and (max-width: 772px) {
       margin: auto 15px;
     }
+  }
+  @media screen and (max-width: 772px) {
+    height: 90px;
   }
 }
 

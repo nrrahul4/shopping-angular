@@ -10,6 +10,7 @@ import { SquareButtonComponent } from './shared/square-button/square-button.comp
 import { RectangleCardComponent } from './shared/rectangle-card/rectangle-card.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormModalComponent } from './shared/form-modal/form-modal.component';
+import { RecipeHeaderComponent } from './components/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormModalComponent } from './shared/form-modal/form-modal.component';
     SquareButtonComponent,
     RectangleCardComponent,
     DashboardComponent,
-    FormModalComponent
+    FormModalComponent,
+    RecipeHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
   </div>
 </div>
 <div *ngIf="gridView">
-  <div class="container container-wrap">
+  <div class="container container-wrap" (click)="itemSelect()">
     <div *ngFor="let item of recipes">
       <div>
         <div class="grid-wrap">

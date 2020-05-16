@@ -4,8 +4,8 @@
   </div>
 </div>
 <div *ngIf="gridView">
-  <div class="container container-wrap" (click)="itemSelect()">
-    <div *ngFor="let item of recipes">
+  <div class="container container-wrap">
+    <div *ngFor="let item of recipes; let i = index"  (click)="itemSelect(i)">
       <div>
         <div class="grid-wrap">
           <div>

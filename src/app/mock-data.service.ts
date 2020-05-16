@@ -15,6 +15,25 @@ export class MockDataService {
     return this.purchaseList;
   }
 
+  removePurchase(id) {
+    const tempPurchase = this.purchaseList.filter((item, i) => {
+      if (i !== parseFloat(id)) {
+        return item;
+      }
+    });
+    this.purchaseList = tempPurchase;
+  }
+
+  updatePurchase(id, detailList) {
+    const tempVal = this.purchaseList.map((purchase, index) => {
+      if (index === parseFloat(id)) {
+        return { ...detailList };
+      }
+      return purchase;
+    });
+    this.purchaseList = [...tempVal];
+  }
+
   setGridView(boolVal) {
     this.gridView = boolVal;
   }

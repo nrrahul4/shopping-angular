@@ -1,47 +1,43 @@
 <div class="recipe-card">
   <div>
     <div class="recipe-image">
-      <img
-        src="https://s23209.pcdn.co/wp-content/uploads/2020/04/Sesame-Chicken-BowlsIMG_0420-360x540.jpg"
-        alt="recipe"
-      />
+      <img src="{{ recipeDetail.image }}" alt="recipe" />
     </div>
     <div class="recipe-detail" *ngIf="edit; else elseWhere">
-      <div>
-        <div class="input-section">
-          <label>New Name</label>
-          <input type="text" />
+      <form [formGroup]="recipeForm" (submit)="onSubmit()">
+        <div>
+          <div class="input-section">
+            <label>New Name</label>
+            <input type="text" formControlName="title" />
+          </div>
+          <div class="input-section">
+            <label>New Ingredients</label>
+            <input type="text" formControlName="ingredients" />
+          </div>
+          <div class="input-section">
+            <label>New Image Url</label>
+            <input type="text" formControlName="image" />
+          </div>
+          <div class="input-section">
+            <label>New Recipe Source</label>
+            <input type="text" formControlName="source" />
+          </div>
         </div>
-        <div class="input-section">
-          <label>New Ingredients</label>
-          <input type="text" />
-        </div>
-        <div class="input-section">
-          <label>New Image Url</label>
-          <input type="text" />
-        </div>
-        <div class="input-section">
-          <label>New Recipe Source</label>
-          <input type="text" />
-        </div>
-      </div>
-      <button class="submit-btn">Submit Changes</button>
+        <button class="submit-btn" type="submit">Submit Changes</button>
+      </form>
     </div>
     <ng-template #elseWhere>
       <div class="recipe-detail">
-        <h2>Biriyani</h2>
+        <h2>{{ recipeDetail.title }}</h2>
         <div class="recipe-actions">
-          <button>Source</button>
+          <button (click)="sourceRecipe()">Source</button>
           <button (click)="editRecipe()">Edit</button>
-          <button>Delete</button>
+          <button (click)="deleteRecipe()">Delete</button>
         </div>
         <div class="recipe-ingredients">
           <h4>Ingredients</h4>
-          <ul>
-            <li>Coco</li>
-            <li>Coco</li>
-            <li>Coco</li>
-            <li>Coco</li>
+          <ul *ngFor="let item of ingredientsList">
+            <li>{{ item }}</li>
           </ul>
         </div>
       </div>

@@ -11,7 +11,7 @@ export class RectangleCardComponent {
   @Input() gridView;
   @Input() recipes = [];
 
-  itemSelect() {
-    this.router.navigate(['./view-recipe'], { queryParams: { edit: false} });
+  itemSelect(index) {
+    this.router.navigate(['./view-recipe'], { queryParams: { edit: false, index } });
   }
 }

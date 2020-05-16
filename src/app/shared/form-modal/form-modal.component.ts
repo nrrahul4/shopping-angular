@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 import { MockDataService } from '../../mock-data.service';
 
 interface RecipeFormat {
-  [key: string]: string;
+  name: string;
+  ingredients: string;
+  image: string;
+  source: string;
 }
 
 @Component({
@@ -11,8 +15,8 @@ interface RecipeFormat {
   styleUrls: ['./form-modal.component.scss'],
 })
 export class FormModalComponent {
-  constructor(private mockDataService: MockDataService) {}
-  recipe: RecipeFormat = {};
+  constructor(private router: Router, private mockDataService: MockDataService) {}
+  recipe = {} as RecipeFormat;
 
   inputChange(event) {
     const { name, value } = event.target;
@@ -25,5 +29,6 @@ export class FormModalComponent {
     (document.getElementById('title') as HTMLInputElement).value = '';
     (document.getElementById('source') as HTMLInputElement).value = '';
     (document.getElementById('image') as HTMLInputElement).value = '';
+    this.router.navigate(['./']);
   }
 }

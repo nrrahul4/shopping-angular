@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MockDataService } from '../../mock-data.service';
 
@@ -26,10 +26,10 @@ export class RecipeHeaderComponent implements OnInit {
   ingredientsList: Array<string> = [];
 
   recipeForm = new FormGroup({
-    title: new FormControl(''),
-    ingredients: new FormControl(''),
-    image: new FormControl(''),
-    source: new FormControl(''),
+    title: new FormControl('', Validators.required),
+    ingredients: new FormControl('', Validators.required),
+    image: new FormControl('', Validators.required),
+    source: new FormControl('', Validators.required),
   });
 
   ngOnInit() {

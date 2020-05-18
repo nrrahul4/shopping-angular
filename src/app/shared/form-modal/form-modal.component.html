@@ -12,51 +12,80 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <form class="modal-body" #recipeForm="ngForm">
         <input
           type="text"
           id="title"
           name="title"
           placeholder="recipe title"
           class="form-control input-section"
-          (input)="inputChange($event)"
+          [(ngModel)]="recipe.title"
+          #titles="ngModel"
+          required
         />
+        <div [hidden]="!titles?.touched || titles?.valid" class="text-danger">
+          Please enter recipe title
+        </div>
         <input
           type="text"
           id="source"
           name="source"
           placeholder="recipe source"
           class="form-control input-section"
-          (input)="inputChange($event)"
+          [(ngModel)]="recipe.source"
+          #sources="ngModel"
+          required
         />
+        <div [hidden]="!sources?.touched || sources?.valid" class="text-danger">
+          Please enter recipe source
+        </div>
         <input
           type="text"
           id="image"
           name="image"
           placeholder="recipe picture"
           class="form-control input-section"
-          (input)="inputChange($event)"
+          [(ngModel)]="recipe.image"
+          #imageUrl="ngModel"
+          required
         />
+        <div
+          [hidden]="!imageUrl?.touched || imageUrl?.valid"
+          class="text-danger"
+        >
+          Please enter recipe image Url
+        </div>
         <input
           type="text"
           id="ingredients"
           name="ingredients"
           placeholder="enter ingredients, separated by a comma"
           class="form-control input-section"
-          (input)="inputChange($event)"
+          [(ngModel)]="recipe.ingredients"
+          #ingredient="ngModel"
+          required
         />
-      </div>
-      <div class="modal-footer">
+        <div
+          [hidden]="!ingredient?.touched || ingredient?.valid"
+          class="text-danger"
+        >
+          Please enter recipe ingredients
+        </div>
         <button
-          type="button"
+          type="submit"
           class="btn btn-primary custom-button"
-          data-dismiss="modal"
-          aria-label="Close"
-          (click)="addRecipe()"
+          (click)="addRecipe(recipeForm)"
         >
           Add
         </button>
-      </div>
+      </form>
+      <button
+        type="submit"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+        #modalClose
+      ></button>
     </div>
   </div>
 </div>

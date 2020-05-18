@@ -20,17 +20,18 @@
 }
 
 .custom-button {
+  float: right;
   background-color: #93b81b;
   border: 1px solid #93b81b;
 }
 
 .modal-footer {
-    border: none;
+  border: none;
 }
 
 @media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 700px;
-        margin: 1.75rem auto;
-    }
+  .modal-dialog {
+    max-width: 700px;
+    margin: 1.75rem auto;
+  }
 }

@@ -1,13 +1,7 @@
-import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { MockDataService } from '../../mock-data.service';
-
-interface RecipeFormat {
-  name: string;
-  ingredients: string;
-  image: string;
-  source: string;
-}
+import { FormData } from './form-data.component';
 
 @Component({
   selector: 'app-form-modal',
@@ -15,20 +9,18 @@ interface RecipeFormat {
   styleUrls: ['./form-modal.component.scss'],
 })
 export class FormModalComponent {
-  constructor(private router: Router, private mockDataService: MockDataService) {}
-  recipe = {} as RecipeFormat;
+  constructor(
+    private router: Router,
+    private mockDataService: MockDataService
+  ) {}
+  @ViewChild('modalClose', { static: true }) modalClose: ElementRef;
+  recipe = new FormData('', '', '', '');
+  showPopup = false;
 
-  inputChange(event) {
-    const { name, value } = event.target;
-    this.recipe[name] = value;
-  }
-
-  addRecipe() {
+  addRecipe(recipeForm: any) {
     this.mockDataService.addPurchase({ ...this.recipe });
-    (document.getElementById('ingredients') as HTMLInputElement).value = '';
-    (document.getElementById('title') as HTMLInputElement).value = '';
-    (document.getElementById('source') as HTMLInputElement).value = '';
-    (document.getElementById('image') as HTMLInputElement).value = '';
+    this.modalClose.nativeElement.click();
+    recipeForm.resetForm();
     this.router.navigate(['./']);
   }
 }
